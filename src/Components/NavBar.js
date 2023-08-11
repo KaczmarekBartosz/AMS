@@ -19,7 +19,7 @@ function NavBar() {
             </li>
             <li>
               <a class="nav-link scrollto" href="#about">
-                O warsztacie
+                O firmie
               </a>
             </li>
             <li>
