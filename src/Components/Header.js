@@ -1,91 +1,87 @@
+import React, { useState } from "react";
+import { IoCloseSharp, IoMenuSharp } from "react-icons/io5";
+
 import "./Header.css";
 
 function Header() {
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  const handleMobileNavToggle = () => {
+    setIsMobileNavOpen(!isMobileNavOpen);
+  };
+
+  const handleNavLinkClick = () => {
+    setIsMobileNavOpen(false);
+  };
+
   return (
-    <header id="header" class="fixed-top">
-      <div class="container d-flex align-items-center justify-content-between">
-        <h1 class="logo">
+    <header
+      id="header"
+      className={`fixed-top ${isMobileNavOpen ? "navbar-mobile" : ""}`}
+    >
+      <div className="container d-flex align-items-center justify-content-between">
+        <h1 className="logo">
           <a href="index.html">AMS</a>
         </h1>
-
-        {/* <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>--> */}
-
-        <nav id="navbar" class="navbar">
+        <nav
+          id="navbar"
+          className={`navbar ${isMobileNavOpen ? "navbar-mobile" : ""}`}
+        >
           <ul>
             <li>
-              <a class="nav-link scrollto active" href="#hero">
+              <a
+                className="nav-link scrollto active"
+                href="#hero"
+                onClick={handleNavLinkClick}
+              >
                 Strona główna
               </a>
             </li>
             <li>
-              <a class="nav-link scrollto" href="#about">
+              <a
+                className="nav-link scrollto"
+                href="#about"
+                onClick={handleNavLinkClick}
+              >
                 O warsztacie
               </a>
             </li>
             <li>
-              <a class="nav-link scrollto" href="#services">
+              <a
+                className="nav-link scrollto"
+                href="#services"
+                onClick={handleNavLinkClick}
+              >
                 Usługi
               </a>
             </li>
             <li>
-              <a class="nav-link scrollto" href="#contact">
+              <a
+                className="nav-link scrollto"
+                href="#contact"
+                onClick={handleNavLinkClick}
+              >
                 Umów wizytę
               </a>
             </li>
-            {/* <li>
-              <a class="nav-link scrollto" href="#blog">
-                Blog
-              </a>
-            </li> */}
-            {/* <li class="dropdown">
-              <a href="#">
-                <span>Drop Down</span> <i class="bi bi-chevron-down"></i>
-              </a>
-              <ul>
-                <li>
-                  <a href="#">Drop Down 1</a>
-                </li>
-                <li class="dropdown">
-                  <a href="#">
-                    <span>Deep Drop Down</span>
-                    <i class="bi bi-chevron-right"></i>
-                  </a>
-                  <ul>
-                    <li>
-                      <a href="#">Deep Drop Down 1</a>
-                    </li>
-                    <li>
-                      <a href="#">Deep Drop Down 2</a>
-                    </li>
-                    <li>
-                      <a href="#">Deep Drop Down 3</a>
-                    </li>
-                    <li>
-                      <a href="#">Deep Drop Down 4</a>
-                    </li>
-                    <li>
-                      <a href="#">Deep Drop Down 5</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">Drop Down 2</a>
-                </li>
-                <li>
-                  <a href="#">Drop Down 3</a>
-                </li>
-                <li>
-                  <a href="#">Drop Down 4</a>
-                </li>
-              </ul>
-            </li> */}
             <li>
-              <a class="nav-link scrollto" href="#contact">
+              <a
+                className="nav-link scrollto"
+                href="#contact"
+                onClick={handleNavLinkClick}
+              >
                 Kontakt
               </a>
             </li>
           </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
+          <i
+            className={`mobile-nav-toggle ${
+              isMobileNavOpen ? "close-icon" : "menu-icon"
+            }`}
+            onClick={handleMobileNavToggle}
+          >
+            {isMobileNavOpen ? <IoCloseSharp /> : <IoMenuSharp />}
+          </i>
         </nav>
       </div>
     </header>
