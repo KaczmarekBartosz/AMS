@@ -53,10 +53,10 @@
 .hero {
   height: 100vh;
   position: relative;
-
   color: #fff;
-  background: url("../Images/BMW_AMS.png");
+  background: url("../Images/BMW_AMS1.png");
   background-size: cover;
+  background-position: center;
 }
 
 .hero .hero-content {
