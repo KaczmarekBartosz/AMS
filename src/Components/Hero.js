@@ -1,26 +1,40 @@
 import "./Hero.css";
+import { TypeAnimation } from "react-type-animation";
 
 function Hero() {
   return (
-    <div
-      id="hero"
-      class="hero route bg-image"
-      // style="background-image: url(assets/img/hero-bg.jpg)"
-    >
+    <div id="hero" class="hero route bg-image">
       <div class="overlay-itro"></div>
       <div class="hero-content display-table">
         <div class="table-cell">
           <div class="container">
-            {/* <!--<p class="display-6 color-d">Hello, world!</p>--> */}
             <h1 class="hero-title mb-4">
               <span className="AMS">AMS</span> Andrzej Spychała
             </h1>
             <p class="hero-subtitle">
-              {/* <span
-                class="typed"
-                data-typed-items="Designer, Developer, Freelancer, Photographer"
-              ></span> */}
               Auto Mechanika Samochodowa
+              <div>
+                <TypeAnimation
+                  sequence={[
+                    "Pełny mechaniczny serwis Twojego auta",
+                    1000,
+                    "Naprawa oraz wymiana elektryki i elektroniki",
+                    1000,
+                    "Naprawa układu hamulcowego, wydechowego i zawieszenia",
+                    1000,
+                    "Chiptuning - podniesienie mocy Twojego auta",
+                    1000,
+                    "Chiptuning - obniżenie spalania Twojego auta",
+                    1000,
+                    "Serwis klimatyzacji",
+                    1000,
+                    "Wymiana ogumienia oraz ustawienie geometrii",
+                    1000,
+                  ]}
+                  speed={50}
+                  repeat={Infinity}
+                />
+              </div>
             </p>
             {/* <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> --> */}
           </div>
